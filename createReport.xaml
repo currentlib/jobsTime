@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>979.333333333333,4027.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>979.333333333333,3978.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>createReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -67,10 +67,9 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Goes through all received jobs and check if it fits date range and release name.&#xA;Colects information: Date, Start time, End Time, Status (ok/not ok), Duration, Infromation (if status 'not ok').&#xA;&#xA;If 0 jobs were found it returns AE." DisplayName="createReport" sap:VirtualizedContainerService.HintSize="959.333333333333,3967.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Goes through all received jobs and check if it fits date range and release name.&#xA;Colects information: Date, Start time, End Time, Status (ok/not ok), Duration, Infromation (if status 'not ok').&#xA;&#xA;If 0 jobs were found it returns AE." DisplayName="createReport" sap:VirtualizedContainerService.HintSize="959.333333333333,3878.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="timeTable" />
       <Variable x:TypeArguments="njl:JObject" Name="json" />
@@ -83,9 +82,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="917.333333333333,3796.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="917.333333333333,3710.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="878.666666666667,3558.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="878.666666666667,3476" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Int32" Name="jobsCounter" />
           </Sequence.Variables>
@@ -94,8 +93,8 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="836.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start: &quot; + componentName]" />
-          <Assign DisplayName="Assign jobs JSON object" sap:VirtualizedContainerService.HintSize="836.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="836.666666666667,93.3333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start: &quot; + componentName]" />
+          <Assign DisplayName="Assign jobs JSON object" sap:VirtualizedContainerService.HintSize="836.666666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="njl:JObject">[json]</OutArgument>
             </Assign.To>
@@ -103,7 +102,7 @@
               <InArgument x:TypeArguments="njl:JObject">[in_JSONJobs]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Create Jobs time data table" sap:VirtualizedContainerService.HintSize="836.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Create Jobs time data table" sap:VirtualizedContainerService.HintSize="836.666666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[timeTable]</OutArgument>
             </Assign.To>
@@ -111,9 +110,9 @@
               <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message - test" sap:VirtualizedContainerService.HintSize="836.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;test&quot;]" />
+          <ui:LogMessage DisplayName="Log Message - test" sap:VirtualizedContainerService.HintSize="836.666666666667,93.3333333333333" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;test&quot;]" />
           <ui:BuildDataTable DataTable="[timeTable]" DisplayName="Build Jobs Data Table" sap:VirtualizedContainerService.HintSize="836.666666666667,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date_x0020_Start&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Time_x0020_Start&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Time_x0020_End&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Duration&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Info_x0020_Message&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-          <Assign DisplayName="Init jobsCounter" sap:VirtualizedContainerService.HintSize="836.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+          <Assign DisplayName="Init jobsCounter" sap:VirtualizedContainerService.HintSize="836.666666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_11">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[jobsCounter]</OutArgument>
             </Assign.To>
@@ -121,26 +120,30 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[index]" DisplayName="For Each 1" sap:VirtualizedContainerService.HintSize="836.666666666667,1826.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[json(&quot;value&quot;)]">
+          <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="[index]" DisplayName="For Each 1" sap:VirtualizedContainerService.HintSize="836.666666666667,1752.66666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[json(&quot;value&quot;)]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="njl:JObject">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="njl:JObject" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="800,1688" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="654,1615.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="ui:GenericValue" Name="info" />
                     <Variable x:TypeArguments="ui:GenericValue" Name="date_str" />
                     <Variable x:TypeArguments="x:String" Name="timeStart" />
                     <Variable x:TypeArguments="ui:GenericValue" Name="timeEnd" />
                     <Variable x:TypeArguments="ui:GenericValue" Name="jobStatus" />
+                    <Variable x:TypeArguments="x:TimeSpan" Name="duration" />
+                    <Variable x:TypeArguments="s:DateTime" Name="endDateTime" />
+                    <Variable x:TypeArguments="s:DateTime" Name="startDateTime" />
+                    <Variable x:TypeArguments="x:String" Name="durationTime" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Assign start date" sap:VirtualizedContainerService.HintSize="758,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="Assign start date" sap:VirtualizedContainerService.HintSize="612,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="ui:GenericValue">[date_str]</OutArgument>
                     </Assign.To>
@@ -148,124 +151,239 @@
                       <InArgument x:TypeArguments="ui:GenericValue">[Split(item("StartTime").ToString, " ")(0)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[(DateTime.Parse(item(&quot;StartTime&quot;).ToString) &gt;= in_StartDate) AND (DateTime.Parse(item(&quot;EndTime&quot;).ToString) &lt;= in_EndDate) AND (item(&quot;ReleaseName&quot;).ToString = in_ReleaseName)]" sap:VirtualizedContainerService.HintSize="758,1494" sap2010:WorkflowViewState.IdRef="If_5">
-                    <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="612,1340" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:String" Name="durationTime" />
-                          <Variable x:TypeArguments="s:DateTime" Name="startDateTime" />
-                          <Variable x:TypeArguments="s:DateTime" Name="endDateTime" />
-                          <Variable x:TypeArguments="x:TimeSpan" Name="duration" />
-                        </Sequence.Variables>
+                  <Sequence sap:VirtualizedContainerService.HintSize="612,1330" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Init start date" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_26">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:DateTime">[startDateTime]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(item("StartTime").ToString).AddHours(in_TimeShift)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Init end date" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_27">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:DateTime">[endDateTime]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(item("EndTime").ToString).AddHours(in_TimeShift)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Calculate duration" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_28">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:TimeSpan">[duration]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:TimeSpan">[endDateTime-startDateTime]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign start time" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_29">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[timeStart]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Split(startDateTime.ToString, " ")(1)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign end time" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_30">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[timeEnd]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="ui:GenericValue">[Split(endDateTime.ToString, " ")(1)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[item(&quot;Info&quot;).ToString = &quot;Job completed&quot;]" DisplayName="Write job status" sap:VirtualizedContainerService.HintSize="570,213.333333333333" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_31">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[jobStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="ui:GenericValue">["ok"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                      <If.Else>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_32">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[jobStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="ui:GenericValue">["not ok"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Else>
+                    </If>
+                    <Assign DisplayName="Get first line of info message" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_33">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[info]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="ui:GenericValue">[Trim(item("Info").ToString).Split(Environment.NewLine.ToArray)(0)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[info = &quot;Job completed&quot;]" sap:VirtualizedContainerService.HintSize="570,213.333333333333" sap2010:WorkflowViewState.IdRef="If_10">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_34">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="ui:GenericValue">[info]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="ui:GenericValue">[""]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{date_str, timeStart, timeEnd, jobStatus, duration, info}]" DataTable="[timeTable]" DisplayName="Add Data Row to time table" sap:VirtualizedContainerService.HintSize="570,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                    <Assign sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_35">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[jobsCounter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[jobsCounter+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                  <ui:CommentOut DisplayName="Comment Out - client side calculation" sap:VirtualizedContainerService.HintSize="612,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,144" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign DisplayName="Init start date" sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_16">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="s:DateTime">[startDateTime]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(item("StartTime").ToString).AddHours(in_TimeShift)]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign DisplayName="Init end date" sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_17">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="s:DateTime">[endDateTime]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(item("EndTime").ToString).AddHours(in_TimeShift)]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign DisplayName="Calculate duration" sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_18">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:TimeSpan">[duration]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:TimeSpan">[endDateTime-startDateTime]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign DisplayName="Assign start time" sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_19">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:String">[timeStart]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">[Split(startDateTime.ToString, " ")(1)]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <Assign DisplayName="Assign end time" sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_20">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="ui:GenericValue">[timeEnd]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="ui:GenericValue">[Split(endDateTime.ToString, " ")(1)]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <If Condition="[item(&quot;Info&quot;).ToString = &quot;Job completed&quot;]" DisplayName="Write job status" sap:VirtualizedContainerService.HintSize="570,216" sap2010:WorkflowViewState.IdRef="If_6">
+                        <If Condition="[(DateTime.Parse(item(&quot;StartTime&quot;).ToString) &gt;= in_StartDate) AND (DateTime.Parse(item(&quot;EndTime&quot;).ToString) &lt;= in_EndDate) AND (item(&quot;ReleaseName&quot;).ToString = in_ReleaseName)]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_21">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="ui:GenericValue">[jobStatus]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="ui:GenericValue">["ok"]</InArgument>
-                              </Assign.Value>
-                            </Assign>
+                            <Sequence sap:VirtualizedContainerService.HintSize="612,1330" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Init start date" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="s:DateTime">[startDateTime]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(item("StartTime").ToString).AddHours(in_TimeShift)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="Init end date" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="s:DateTime">[endDateTime]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(item("EndTime").ToString).AddHours(in_TimeShift)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="Calculate duration" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:TimeSpan">[duration]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:TimeSpan">[endDateTime-startDateTime]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="Assign start time" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[timeStart]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[Split(startDateTime.ToString, " ")(1)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="Assign end time" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="ui:GenericValue">[timeEnd]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="ui:GenericValue">[Split(endDateTime.ToString, " ")(1)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <If Condition="[item(&quot;Info&quot;).ToString = &quot;Job completed&quot;]" DisplayName="Write job status" sap:VirtualizedContainerService.HintSize="570,213.333333333333" sap2010:WorkflowViewState.IdRef="If_6">
+                                <If.Then>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_21">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[jobStatus]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">["ok"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Then>
+                                <If.Else>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[jobStatus]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">["not ok"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Else>
+                              </If>
+                              <Assign DisplayName="Get first line of info message" sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="ui:GenericValue">[info]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="ui:GenericValue">[Trim(item("Info").ToString).Split(Environment.NewLine.ToArray)(0)]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <If Condition="[info = &quot;Job completed&quot;]" sap:VirtualizedContainerService.HintSize="570,213.333333333333" sap2010:WorkflowViewState.IdRef="If_7">
+                                <If.Then>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="ui:GenericValue">[info]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="ui:GenericValue">[""]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </If.Then>
+                              </If>
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{date_str, timeStart, timeEnd, jobStatus, duration, info}]" DataTable="[timeTable]" DisplayName="Add Data Row to time table" sap:VirtualizedContainerService.HintSize="570,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                              <Assign sap:VirtualizedContainerService.HintSize="570,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[jobsCounter]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[jobsCounter+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
                           </If.Then>
-                          <If.Else>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_22">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="ui:GenericValue">[jobStatus]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="ui:GenericValue">["not ok"]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </If.Else>
                         </If>
-                        <Assign DisplayName="Get first line of info message" sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_23">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="ui:GenericValue">[info]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="ui:GenericValue">[Trim(item("Info").ToString).Split(Environment.NewLine.ToArray)(0)]</InArgument>
-                          </Assign.Value>
-                        </Assign>
-                        <If Condition="[info = &quot;Job completed&quot;]" sap:VirtualizedContainerService.HintSize="570,216" sap2010:WorkflowViewState.IdRef="If_7">
-                          <If.Then>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_24">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="ui:GenericValue">[info]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="ui:GenericValue">[""]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                          </If.Then>
-                        </If>
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{date_str, timeStart, timeEnd, jobStatus, duration, info}]" DataTable="[timeTable]" DisplayName="Add Data Row to time table" sap:VirtualizedContainerService.HintSize="570,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                        <Assign sap:VirtualizedContainerService.HintSize="570,62" sap2010:WorkflowViewState.IdRef="Assign_25">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Int32">[jobsCounter]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Int32">[jobsCounter+1]</InArgument>
-                          </Assign.Value>
-                        </Assign>
                       </Sequence>
-                    </If.Then>
-                  </If>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
                 </Sequence>
               </ActivityAction>
             </ui:ForEach.Body>
           </ui:ForEach>
-          <If Condition="[jobsCounter = 0]" sap:VirtualizedContainerService.HintSize="836.666666666667,214" sap2010:WorkflowViewState.IdRef="If_4">
+          <If Condition="[jobsCounter = 0]" sap:VirtualizedContainerService.HintSize="836.666666666667,212" sap2010:WorkflowViewState.IdRef="If_4">
             <If.Then>
               <Throw DisplayName="No Jobs" Exception="[new SystemException(&quot;Release name: &quot; + in_ReleaseName + &quot;. Found 0 jobs. Wrong release name or date range.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </If.Then>
           </If>
-          <If Condition="[in_WriteTo = 0]" sap:VirtualizedContainerService.HintSize="836.666666666667,537.333333333333" sap2010:WorkflowViewState.IdRef="If_8">
+          <If Condition="[in_WriteTo = 0]" sap:VirtualizedContainerService.HintSize="836.666666666667,535.333333333333" sap2010:WorkflowViewState.IdRef="If_8">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,383.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
@@ -293,7 +411,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="883.333333333333,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="883.333333333333,21.3333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

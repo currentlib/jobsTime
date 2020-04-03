@@ -10,8 +10,8 @@ UiPath.Web.Activities v1.4.4
 | tenancyName | Login credentials  |
 | userName | Login credentials  |
 | passWord  | Login credentials  |
-| startDate  | First date of range  |
-| endDate  | Last date of range  |
+| startDate  | First date of range. Format: yyyy-mm-dd  |
+| endDate  | Last date of range. Format: yyyy-mm-dd  |
 | jobsList  | List of jobs that robot will collect. Comma (,) is delimiter.  |
 | writeTo  | 0 - CSV, 1 - XLSX  |
 | timeShift  | Difference in time zones. Robot will shift output times on that value. Positive and negative numbers allowed  |

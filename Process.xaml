@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>396,396</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>396,436</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -79,6 +79,9 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_TokenKey">[in_Token]</InArgument>
         <OutArgument x:TypeArguments="njl:JObject" x:Key="out_JSONJobs">[jobs]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorURL">[in_Config("orchestratorURL").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_StartTime">[in_Config("startDate").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_EndTime">[in_Config("endDate").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ReleaseName">[in_TransactionItem(0).ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke createReport workflow" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="createReport.xaml">
