@@ -132,7 +132,7 @@
               </ui:HttpClient>
             </If.Then>
             <If.Else>
-              <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="GET Jobs w/o OrgUnit" EndPoint="[in_OrchestratorURL + &quot;odata/Jobs?$filter=StartTime%20gt%20&quot; + in_StartTime + &quot;T%3A00%3A00%3A000Z%20and%20EndTime%20lt%20&quot; + in_EndTime + &quot;T00%3A00%3A000Z%20and%20ReleaseName%20eq%20'&quot; + in_ReleaseName + &quot;'&quot;]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" ResponseHeaders="[headers]" Result="[result]" StatusCode="[status]" TimeoutMS="6000">
+              <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="GET Jobs w/o OrgUnit" EndPoint="[request]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" ResponseHeaders="[headers]" Result="[result]" StatusCode="[status]" TimeoutMS="6000">
                 <ui:HttpClient.Attachments>
                   <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
                 </ui:HttpClient.Attachments>
@@ -175,7 +175,7 @@
           </ui:CommentOut>
           <If Condition="[jsonObject.ContainsKey(&quot;errorCode&quot;)]" sap:VirtualizedContainerService.HintSize="484,214" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Throw DisplayName="Throw JSON error" Exception="[new SystemException(&quot;Orchestrator requires organization unit id.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <Throw DisplayName="Throw JSON error" Exception="[new SystemException(jsonObject(&quot;message&quot;).ToString + &quot; Error Code: &quot; + jsonObject(&quot;errorCode&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </If.Then>
           </If>
           <Assign DisplayName="Output Jobs json object" sap:VirtualizedContainerService.HintSize="484,62" sap2010:WorkflowViewState.IdRef="Assign_2">
